@@ -49,7 +49,17 @@ public class Main {
             signIn(cookie, tbs, focus);
         } catch (Exception e) {
             LOG.error(e, "Error!");
+        } finally {
+            shutdownOkHttpClient();
         }
+    }
+
+    /**
+     * 关闭okhttp客户端资源
+     */
+    private static void shutdownOkHttpClient() {
+        CLIENT.dispatcher().executorService().shutdown();
+        CLIENT.connectionPool().evictAll();
     }
 
     /**
