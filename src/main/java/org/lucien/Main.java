@@ -115,7 +115,7 @@ public class Main {
                 throw new RuntimeException(responseStr);
             }
         } catch (Exception e) {
-            throw new RuntimeException("Get focus error!", e);
+            throw new RuntimeException("Get tbs error!", e);
         }
     }
 
